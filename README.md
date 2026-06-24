@@ -18,7 +18,7 @@ Instead, I would begin by answering a series of questions:
 The architecture described in this document reflects my current hypotheses about how I would approach those questions and the trade-offs I would expect to evaluate. 
 These hypotheses would ultimately be validated or rejected through experimentation, offline evaluation, and staged production rollouts.
 
-Note: This repository contains a design proposal exploring how I would approach predictive test selection at Buildkite. It is intentionally focused on architecture, trade-offs, and execution strategy rather than production code/implementation details.
+> Note: This repository contains a design proposal exploring how I would approach predictive test selection at Buildkite. It is intentionally focused on architecture, trade-offs, and execution strategy rather than production code/implementation details.
 
 ### Why I'm Interested in This Problem
 
