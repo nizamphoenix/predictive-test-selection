@@ -108,7 +108,8 @@ It has to be safe. A selection system that occasionally lets a real bug through 
 - The decision is fast enough to sit in the critical path. It cannot add more delay than it saves.
 - It works across many languages and frameworks, not just one.
 
-<img width="1440" height="720" alt="image" src="https://github.com/user-attachments/assets/f01d1980-d9db-403f-bb97-c14738d440c0" />
+
+![recall_coverage_curve](recall_coverage_curve.png)
 
 The line rises steeply at the start and then flattens. Running the first 30% of the suite (the tests the ranker is most suspicious of) already catches about 95% of failures. To squeeze out the last few percent of recall you have to run most of the rest of the suite, which buys very little. That flat tail is the waste predictive selection removes.
 
