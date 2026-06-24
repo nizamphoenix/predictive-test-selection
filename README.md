@@ -160,7 +160,7 @@ Safety and savings pull against each other. Skip more tests and you save more, b
 flowchart TB
     subgraph "The core trade-off"
     direction LR
-    A[Skip more tests<br/>= more savings] <--> |tension| B[Catch every failure<br/>= more safety]
+    A[Skip more tests<br/>= more savings] <--> |tension 😰| B[Catch every failure<br/>= more safety]
     end
 ```
 
