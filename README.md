@@ -1,8 +1,8 @@
 # Predictive Test Selection
 
-This document should be read as an investigation and execution strategy rather than a final architecture.
+This document should be read as an investigation and execution strategy rather than a final architecture. It is intentionally focused on architecture and trade-offs rather than production code/implementation details.
 
-Without access to Buildkite's datasets, customer usage patterns, and existing Test Engine infrastructure, I would not assume that any particular modelling approach is correct.
+Without access to the actual data, usage patterns, and existing infrastructure, I would not assume that any particular modelling approach is correct.
 
 Instead, I would begin by answering a series of questions:
 ```
@@ -15,10 +15,8 @@ Instead, I would begin by answering a series of questions:
 - What level of safety is required for customer trust, and how does that translate into measurable recall targets?
 - How can the system generalise across repositories, languages, frameworks, and customers while remaining operationally simple?
 ```
-The architecture described in this document reflects my current hypotheses about how I would approach those questions and the trade-offs I would expect to evaluate. 
-These hypotheses would ultimately be validated or rejected through experimentation, offline evaluation, and staged production rollouts.
-
-> Note: This repository contains a design proposal exploring how I would approach predictive test selection at Buildkite. It is intentionally focused on architecture, trade-offs, and execution strategy rather than production code/implementation details.
+The solution described in this document reflects my current hypotheses about how I would approach those questions and the trade-offs I would expect to evaluate. 
+These hypotheses would ultimately be validated or rejected through experimentation, offline evaluation, and staged rollouts.
 
 ### Why I'm Interested in This Problem
 
