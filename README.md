@@ -68,7 +68,7 @@ Now, without further ado...
 
 ---
 
-## 1. Executive Summary 📊
+## 1. Executive Summary 🧾
 
 ### The problem
 
@@ -143,7 +143,7 @@ The tension between these three is the whole problem. Select everything and you 
 
 ---
 
-## 3. What We Are Optimising 🕵️‍♂️
+## 3. What We Are Optimising 🎯
 
 ### The three quantities
 
@@ -182,7 +182,7 @@ An escaped failure is the bad case. A test would have failed, we skipped it, and
 
 ---
 
-## 4. Why Not Just Use Rules, Regex, or a Dependency Graph?
+## 4. Why Not Just Use Rules, Regex, or a Dependency Graph? 🤔
 
 A fair question: why bring ML into this at all, when you could write rules? Worth answering head on, because the simple approaches are exactly what a good system has to beat, and they become our baseline (see [ML Approach](#10-the-ml-approach-and-its-trade-offs)).
 
@@ -227,7 +227,7 @@ The dependency graph tells you what could be related. History tells you what act
 
 ---
 
-## 5. Solution Overview
+## 5. Solution Overview 🛠️
 
 There are three planes. 
 - The CI side, where changes happen and tests run. 
@@ -266,7 +266,7 @@ A change flows into the selection step, which asks the service what to run. The 
 
 ---
 
-## 6. Triggers and CI Integration
+## 6. Triggers and CI Integration 🔄
 
 ### When does selection happen?
 
@@ -315,7 +315,7 @@ sequenceDiagram
 
 ---
 
-## 7. End-to-End Architecture
+## 7. End-to-End Architecture 🧱
 
 The e2e picture across the *fast serving path* and the *slow learning path*.
 
@@ -368,7 +368,7 @@ The serving plane runs on a fast clock, milliseconds to seconds, in the critical
 
 ---
 
-## 8. Data and Curation
+## 8. Data Curation 📚
 
 Models are only as good as the data behind them. This section turns raw, messy signals into training examples we can trust.
 
@@ -409,7 +409,7 @@ A fancy model on noisy labels loses to a simple model on clean labels. Most of t
 
 ---
 
-## 9. Feature Engineering and Multi-Language Coverage
+## 9. Feature Engineering and Multi-Language Coverage 🌐
 
 Features are what the model actually looks at. We group them into three families, ordered from cheapest and most general to richest and most specific.
 
@@ -473,7 +473,7 @@ The core gives broad coverage right away, since history-based signals are strong
 
 ---
 
-## 10. The ML Approach and Its Trade-offs
+## 10. The ML Approach and Its Trade-offs ⚖️
 
 ### Why this is ranking, not classification
 
@@ -544,7 +544,7 @@ flowchart LR
 
 In plain terms, the graph captures what actually fails together from real history, including the indirect links a folder rule or import graph would miss. A shared utility that quietly breaks a checkout test shows up here even though the two files share no name or directory.
 
-### The model: LightGBM with a LambdaMART objective
+### The model: LightGBM with a LambdaMART objective 
 
 Our default production model (Level 1) is **gradient-boosted decision trees trained with LambdaMART**, using LightGBM.
 
@@ -646,7 +646,7 @@ Whatever the model, we do not only run the predicted-to-fail tests. We run those
 
 ---
 
-## 11. Serving and Inference
+## 11. Serving and Inference ⚖️
 
 The serving layer is where the model meets the critical path. Its job is to answer "what should I run?" fast, and degrade gracefully when it cannot. The request path is a short pipeline.
 
@@ -690,7 +690,7 @@ flowchart TB
 
 ---
 
-## 12. Evaluation: Offline and Online
+## 12. Evaluation: Offline and Online 📊
 
 We never trust a model because it looks good. We prove it offline, then prove it again carefully in production. Evaluation is where safety is earned.
 
@@ -779,7 +779,7 @@ Even at full rollout, we keep a small random sample of skipped tests running any
 
 ---
 
-## 13. Failure Modes and Fallbacks
+## 13. Failure Modes and Fallbacks 🛡️
 
 The rule again: when in doubt, run more, never fewer. We fail safe, never open.
 
@@ -810,7 +810,7 @@ Every fallback costs the same and it is acceptable: we run more tests than stric
 
 ---
 
-## 14. Feedback Loops and Continuous Improvement
+## 14. Feedback Loops and Continuous Improvement 🔁
 
 The system improves the more it runs, because every build is a labelled example of "this change produced these outcomes."
 
@@ -841,7 +841,7 @@ A codebase keeps changing: new modules, new patterns, new tests. A model trained
 
 ---
 
-## 15. Scalability
+## 15. Scalability 📈
 
 The system serves many customers, many repos, and billions of test runs. Scalability is designed in along a few axes.
 
@@ -895,7 +895,7 @@ This is the deliberate balance the JD's generalisation requirement asks for. One
 
 ---
 
-## 16. Observability and Monitoring
+## 16. Observability and Monitoring 👀
 
 We cannot keep a system safe if we cannot see it. Every production model is instrumented with these signals.
 
@@ -912,7 +912,7 @@ These feed dashboards and alerts with clear thresholds. Every signal is sliced b
 
 ---
 
-## 17. The Cold-Start Problem
+## 17. The Cold-Start Problem ❄️
 
 Cold start is deciding well with little or no history for a tenant: a new repo, a new test, or a language we have barely seen. The shared model's global features carry most of the load here, so a new tenant gets a useful prediction immediately, then improves as its tenant-scoped signal accrues.
 
@@ -949,7 +949,7 @@ This is why the system is valuable but humble early. A new customer gets useful 
 
 ---
 
-## 18. MVP and Phased Roadmap
+## 18. MVP and Phased Roadmap 🗺️
 
 We build in stages. Each stage ships and proves value before we add complexity. The roadmap mirrors the ladder in [section 10](#10-the-ml-approach-and-its-trade-offs).
 
@@ -971,7 +971,7 @@ flowchart LR
 
 ---
 
-## 19. Risks and Open Questions
+## 19. Risks and Open Questions  ⚠️
 
 An honest account of what could go wrong or is still undecided.
 
@@ -987,7 +987,7 @@ An honest account of what could go wrong or is still undecided.
 
 ---
 
-## 20. Appendices
+## 20. Appendices 📎
 
 ### Appendix A: Avoiding Data Leakage
 
