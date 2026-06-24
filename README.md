@@ -1,4 +1,4 @@
-# Predictive Test Selection
+# Predictive Test Selection 🕵️‍♂️
 
 This document should be read as an investigation and execution strategy rather than a final architecture. It is intentionally focused on architecture and trade-offs rather than production code/implementation details.
 
@@ -18,7 +18,7 @@ Instead, I would begin by answering a series of questions:
 The solution described in this document reflects my current hypotheses about how I would approach those questions and the trade-offs I would expect to evaluate. 
 These hypotheses would ultimately be validated or rejected through experimentation, offline evaluation, and staged rollouts.
 
-### Why I'm Interested in This Problem
+### Why I'm Interested in This Problem 🤔
 
 Predictive test selection sits at the intersection of several areas where I have spent most of my career:
 
@@ -68,7 +68,7 @@ Now, without further ado...
 
 ---
 
-## 1. Executive Summary
+## 1. Executive Summary 📊
 
 ### The problem
 
@@ -115,7 +115,7 @@ The dial is the recall target. Set it to 95% and most teams run roughly 30% of t
 
 ---
 
-## 2. Problem Statement
+## 2. Problem Statement 📜
 
 ### Informal
 
@@ -143,7 +143,7 @@ The tension between these three is the whole problem. Select everything and you 
 
 ---
 
-## 3. What We Are Optimising
+## 3. What We Are Optimising 🕵️‍♂️
 
 ### The three quantities
 
