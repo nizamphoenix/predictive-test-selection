@@ -1,4 +1,4 @@
-# Predictive Test Selection 🕵️‍♂️
+# Predictive Test Selection 🔍
 
 This document should be read as an investigation and execution strategy rather than a final architecture. It is intentionally focused on architecture and trade-offs rather than production code/implementation details.
 
