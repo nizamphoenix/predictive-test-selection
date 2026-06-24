@@ -1,4 +1,4 @@
-# Predictive Test Selection (ML Solution Design)
+# Predictive Test Selection
 
 This document should be read as an investigation and execution strategy rather than a final architecture.
 
