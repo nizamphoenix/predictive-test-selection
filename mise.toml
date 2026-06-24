@@ -1,6 +1,0 @@
-[tools]
-uv = "0.9.18"
-python = "3.13.2" # single source of truth. ⚠️ Run `make sync-py-versions` after changing this to update pyproject and .python-version files
-
-[settings]
-asdf_compat = true  # This ensures .python-version is created/updated
